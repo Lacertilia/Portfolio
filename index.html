@@ -98,22 +98,20 @@
             </div>
         </div>
         <div class='row' style='align-items: center;'>
-            <div class='col-3'>
-                <button><img src="./Images/arrowLeft.png" alt="Vänster"></button>
-            </div>
+            <div class='col-3'></div>
             <div class='col-6'>
                 <div class='row'>
-                    <img src="./Images/Placeholder550x550.png" alt="Nu gick något snett.">
+                    <img src="./Images/Placeholder550x550.png" alt="Nu gick något snett." id='projectPicture'>
                 </div>
                 <div class='row'>
-                    <h1>Projekt 1</h1>
+                    <h1 id='projectName'>Projekt 1</h1>
                 </div>
                 <div class='row'>
-                    <p>Information om projektet</p>
+                    <p id='projectInfo'>Information om projektet</p>
                 </div>
             </div>
             <div class='col-3'>
-                <button><img src="./Images/arrowRight.png" alt="Höger"></button>
+                <button><img src="./Images/arrowRight.png" alt="Höger" id='rightProject'></button>
             </div>
         </div>
         <div class='row' style='height: 100px; width: 100vw; background-color: #727272; align-items: center;'>
@@ -121,5 +119,34 @@
         </div>
 
     </div>
+    <script>
+        let rightButton = document.getElementById("rightProject");
+        let name = document.getElementById("projectName");
+        let description = document.getElementById("projectInfo");
+        let picture = document.getElementById("projectPicture");
+
+        let projectNameList = ["Breakout"];
+        let projectDescriptionList = ["Ett spel som är baserat på Ataris spel Breakout"];
+
+        let currentProject = 0;
+
+        name.textContent = projectNameList[currentProject];
+        description.textContent = projectDescriptionList[currentProject];
+
+        rightButton.addEventListener("click", function(){
+            nextProject();
+
+            name.textContent = projectNameList[currentProject];
+            description.textContent = projectDescriptionList[currentProject];
+        });
+
+        function nextProject(){
+            if(currentProject < (projectNameList.length - 1)){
+                currentProject++;
+            }else{
+                currentProject = 0;
+            }
+        }
+    </script>
 </body>
 </html>
