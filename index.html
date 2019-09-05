@@ -54,7 +54,7 @@
             outline: 0px;
         }
         img{
-            max-width: 100%;
+            max-width: 480px;
             max-height: 480px;
         }
     </style>
@@ -104,10 +104,10 @@
                     <img src="./Images/Placeholder550x550.png" alt="Nu gick något snett." id='projectPicture'>
                 </div>
                 <div class='row'>
-                    <h1 id='projectName'>Projekt 1</h1>
+                    <a href='' id='gitLink' target='_blank'><h1 id='projectName'>Javascript</h1></a>
                 </div>
                 <div class='row'>
-                    <p id='projectInfo'>Information om projektet</p>
+                    <p id='projectInfo'>Vänligen aktivera Javascript för bästa funktion</p>
                 </div>
             </div>
             <div class='col-3'>
@@ -119,25 +119,34 @@
         </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-        let rightButton = document.getElementById("rightProject");
+        let button = document.getElementById("rightProject");
         let name = document.getElementById("projectName");
         let description = document.getElementById("projectInfo");
         let picture = document.getElementById("projectPicture");
+        let gitLink = document.getElementById("gitLink");
 
-        let projectNameList = ["Breakout"];
-        let projectDescriptionList = ["Ett spel som är baserat på Ataris spel Breakout"];
+        let projectNameList = ["Breakout", "Julspel"];
+        let projectDescriptionList = ["Ett spel som är baserat på Ataris spel Breakout.", "Ett julspel skrivet i Javascript som vi hade som projekt i gymnasiet."];
+        let projectGitLink = ["https://github.com/Lacertilia/SlutProjekt", "https://github.com/Lacertilia/Julspel"];
 
         let currentProject = 0;
 
+        picture.src="./Images/" + projectNameList[currentProject] + ".png";
         name.textContent = projectNameList[currentProject];
         description.textContent = projectDescriptionList[currentProject];
+        gitLink.setAttribute("href", projectGitLink[currentProject]);
 
-        rightButton.addEventListener("click", function(){
+        button.addEventListener("click", function(){
             nextProject();
 
             name.textContent = projectNameList[currentProject];
             description.textContent = projectDescriptionList[currentProject];
+            picture.src="./Images/" + projectNameList[currentProject] + ".png";
+            gitLink.setAttribute("href", projectGitLink[currentProject]);
         });
 
         function nextProject(){
