@@ -14,11 +14,40 @@
             height: 100px;
             align-items: center;
         }
+        h1{
+            font-size: 42pt;
+        }
         .navName{
-            font-size: 2rem;
+            font-size: 42pt;
             color: white;
             font-family: 'Source Code Pro', monospace;
             
+        }
+        p{
+            font-size: 25pt;
+        }
+        .container{
+            width: 100vw;
+            margin: 0;
+        }
+        .row{
+            margin-top: 30px;
+        }
+        .col-3{
+            align-items: center;
+            text-align: center;
+            
+        }
+        button{
+            border-radius: 2000px; 
+            width: 75px; 
+            height: 75px; 
+            padding: 0; 
+            border: 0;
+        }
+        img{
+            max-width: 100%;
+            max-height: 480px;
         }
     </style>
 </head>
@@ -29,6 +58,51 @@
         </li>
     </ul>
 
+    <div class='container'>
+        <div class='row'>
+            <div class='col-3'></div>
+            <div class='col-6'>
+                <img src="./Images/Placeholder550x550.png" alt="Nu gick något snett.">
+            </div>
+            
+        </div>
+        <div class='row'>
+            <div class='col-3'></div>
+            <div class='col-6'>
+                <h1>Om Mig</h1>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-3'></div>
+            <div class='col-6'>
+                <p>Lorem ipsum dolor sit amet asdasdad <br>
+                    asdasdadadadadadd <br>
+                    asdasda <br>
+                    asdasda <br>
+                    asd <br>
+                    aa <br>
+                    sd <br>
+                    asa <br>
+                    sas <br>
+                    a <br>
+                    aaasdasd
+                </p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-3'>
+                <button><img src="./Images/arrowLeft.png" alt="Vänster"></button>
+            </div>
+            <div class='col-6'>
+                <div class='row'>
+                    <img style='width: 540px; height: 540px;' src="./Images/Placeholder550x550.png" alt="Nu gick något snett.">
+                </div>
+            </div>
+            <div class='col-3'>
+                <button><img src="./Images/arrowRight.png" alt="Höger"></button>
+            </div>
+        </div>
 
+    </div>
 </body>
 </html>
